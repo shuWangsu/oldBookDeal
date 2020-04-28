@@ -1,0 +1,119 @@
+/* pages/center/center.wxss */
+page{
+  height:100%;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 350rpx;
+  align-items: center;
+}
+.header .background {
+  width: 100%;
+  height: 350rpx;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+.header .headerImg{
+  border-radius: 50%;
+  overflow: hidden;
+  height: 150rpx;
+  width: 150rpx;
+  margin-left: 35rpx;
+}
+/* .clearbox{
+  width: 100%;
+  height: 0rpx;
+} */
+/* .header .headerImg button{
+  height: 150rpx;
+  width: 150rpx;
+  min-height: 150rpx;
+  min-width: 150rpx;
+  padding: 0;
+} */
+.header .headerImg image{
+  height: 150rpx;
+  width: 150rpx;
+}
+.header .nickname{
+  flex: 1;
+  font-size: 40rpx;
+  color: #fff;
+  margin-left: 20rpx;
+}
+.nickname .salenum{
+  font-size: 30rpx;
+  display: block;
+  margin-top:10rpx; 
+}
+
+.mySubmit{
+  width: 100%;
+  height: 120rpx;
+  margin-top: -10rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.mySubmit view {
+  margin-left: 35rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  display: inline-block;
+  font-size: 36rpx;
+  font-weight: 600;
+  font-family: 仿宋;
+}
+.submit_img {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 25rpx;
+}
+.down_img{
+  width: 60rpx;
+  height: 60rpx;
+  transform:rotate(-90deg);
+  margin-left: 385rpx;
+}
+.line{
+  width: 100%;
+  margin-left: 120rpx;
+  border-top:1px #989898 solid;
+}
+
+.myShoppingCar {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+}
+
+.myShoppingCar view {
+  margin-left: 35rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  display: inline-block;
+  font-size: 36rpx;
+  font-weight: 600;
+  font-family: 仿宋;
+}
+
+.down_car {
+  width: 60rpx;
+  height: 60rpx;
+  transform:rotate(-90deg);
+  margin-left: 351rpx;
+}
+.mySubmit .red_box {
+  display: block;
+  width: 35rpx;
+  height: 35rpx;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 41rpx;
+  left: 580rpx;
+}

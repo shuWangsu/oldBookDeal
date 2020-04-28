@@ -1,0 +1,13 @@
+/* pages/customermsg/customermsg.wxss */
+.text_box {
+  width: 100%;
+}
+.text_box view{
+  width: 90%;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 36rpx;
+  font-family: 宋体;
+  font-weight: 600;
+  margin: 25rpx auto;
+}

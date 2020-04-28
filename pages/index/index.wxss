@@ -1,0 +1,147 @@
+page{
+  /* background-color: #e5e5e5; */
+}
+view.search {
+  display: flex;
+  flex-direction: row;
+  height: 98rpx;
+  width: 96%;
+  margin: 0 auto;
+  /* background: rgb(199, 151, 151); */
+  align-items: center;
+}
+
+.header_fixed {
+  position: fixed;
+  height: 150rpx;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.zhanwei {
+  height: 150rpx;
+  width: 100%;
+}
+
+view.searchItem {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  flex-direction: row;
+  border-radius: 35rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  box-shadow: 3rpx 4rpx 4rpx 3rpx #e5e5e5;
+}
+
+view.searchItem image {
+  height: 42rpx;
+  width: 42rpx;
+  align-self: center;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}
+
+view.searchItem input {
+  flex: 1;
+  font-size: 30rpx;
+  height: 80rpx;
+  min-height: 80rpx;
+  padding-left: 30rpx;
+}
+
+.scroll_cal scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}
+
+scroll-view .header_list {
+  display: inline-block;
+  width: 25%;
+  /* border: 1rpx solid pink; */
+  text-align: center;
+}
+
+.header_list.active {
+  border-bottom: 5rpx solid #de688b;
+}
+
+.eachItem {
+  display: flex;
+  flex-direction: row;
+  height: 300rpx;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  border-radius: 25rpx;
+  box-shadow: 3rpx 4rpx 4rpx 3rpx #ececec;
+}
+.eachItem .book_image {
+  margin: 10rpx;
+}
+
+.eachItem .book_image image {
+  width: 230rpx;
+  height: 280rpx;
+  align-self: center;
+}
+
+.book_message {
+  flex: 1;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.book_message .book_title {
+  margin: 25rpx 30rpx 0 15rpx;
+  font-size: 35rpx;
+  font-weight: 500;
+}
+
+.book_message .book_price,.book_author {
+  margin-left: 15rpx;
+}
+
+.book_message .book_price text {
+  font-size: 35rpx;
+  font-weight: 700;
+}
+
+.book_message .book_price .dazhe {
+  width: 100rpx;
+  height: 35rpx;
+  background-color: red;
+  display: inline-block;
+  margin-left: 20rpx;
+  border-radius: 15rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.book_num {
+  width: 120rpx;
+  height: 35rpx;
+  background-color: yellowgreen;
+  display: inline-block;
+  margin-left: 20rpx;
+  border-radius: 15rpx;
+  font-size: 25rpx;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.pub_time {
+  /* margin-left: 15rpx;
+  font-size: 35rpx;
+  font-weight: 700; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 35rpx;
+}

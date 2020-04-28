@@ -1,0 +1,5 @@
+<view class="text_box">
+  <view bindtap="copyReceiver" data-text="{{comstommsg.postname}}">收件人: {{comstommsg.postname}}</view>
+  <view bindtap="copyTel" data-text="{{comstommsg.telephone}}">电话号码: {{comstommsg.telephone}}</view>
+  <view bindtap="copyAdress" data-text="{{comstommsg.adress}}">收件地址: {{comstommsg.adress}}</view>
+</view>

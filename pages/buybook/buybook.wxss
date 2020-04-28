@@ -1,0 +1,638 @@
+@import "/utils/wxss/stylesheet.wxss";
+
+page {
+  height: 100%;
+}
+
+.line {
+  width: 100%;
+  border: 1rpx solid hsl(0, 6%, 69%);
+  margin: 10rpx 0 15rpx;
+}
+
+.header_content {
+  position: relative;
+  width: 100%;
+  height: 460rpx;
+}
+
+/* 背景图片 */
+
+.background {
+  width: 100%;
+  height: 460rpx;
+  position: absolute;
+  background-size: 100% 100%;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+/* 半透明的一层遮罩 */
+
+.halfopc {
+  position: absolute;
+  opacity: 0.3;
+  background-color: #000;
+  width: 100%;
+  height: 460rpx;
+}
+
+.book_content {
+  height: 325rpx;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15rpx;
+  position: absolute;
+  top: 50%; /*偏移*/
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.book_img {
+  height: 276rpx;
+  width: 220rpx;
+  background-color: #fdf6f6;
+  position: relative;
+  top: 50%; /*偏移*/
+  transform: translateY(-50%);
+  border-radius: 10rpx;
+  margin-left: 15rpx;
+}
+
+.book_img image {
+  height: 239rpx;
+  width: 83%;
+  position: absolute;
+  top: 50%; /*偏移*/
+  transform: translate(-50%, -50%);
+  left: 50%;
+  border-radius: 10rpx;
+}
+
+.book_content .book_msg {
+  position: absolute;
+  top: 50%; /*偏移*/
+  left: 300rpx;
+  transform: translateY(-50%);
+}
+
+.dazhe {
+  width: 85rpx;
+  height: 35rpx;
+  background-color: red;
+  display: inline-block;
+  margin-left: 20rpx;
+  border-radius: 15rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.connect_sale {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.head_photo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1rpx solid skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head_photo image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.copy_tel {
+  width: 120rpx;
+  height: 120rpx;
+  text-align: center;
+  color: #eb5710;
+  font-size: 25rpx;
+}
+
+.copy_tel image {
+  width: 78rpx;
+  height: 65rpx;
+  padding-left: 15rpx;
+  padding-top: 10rpx;
+}
+
+.nicheng {
+  margin-left: -40rpx;
+}
+
+.nicheng text {
+  font-size: 28rpx;
+}
+
+.degree {
+  width: 120rpx;
+  height: 30rpx;
+  border: 1rpx solid #cd1411;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 23rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+
+.shengyu {
+  font-family: 仿宋;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.mid_msg {
+  font-size: 40rpx;
+  width: 100%;
+  height: 80rpx;
+  font-family: 宋体;
+  line-height: 80rpx;
+}
+
+.bookimgbox {
+  width: 220rpx;
+  height: 276rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.bookimgbox image {
+  width: 218rpx;
+  height: 266rpx;
+  border-radius: 15rpx;
+}
+
+/* 书籍简介 */
+
+.jianjie {
+  font-size: 33rpx;
+  font-weight: 550;
+  font-family: 仿宋;
+  text-indent: 1em;
+}
+
+/* 评论区域 */
+
+.pinglunbox {
+  width: 100%;
+  height: 150rpx;
+  border: 1rpx solid red;
+}
+
+/* 购买按钮区域 */
+
+.buybook {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 130rpx;
+  background-color: #fff;
+}
+
+.buybook button::after {
+  border: none;
+}
+
+.buybook button {
+  position: absolute;
+  top: 24rpx;
+  left: 0rpx;
+  height: 80rpx;
+  width: 120rpx;
+  min-height: 80rpx;
+  min-width: 80rpx;
+  background-color: #fff;
+}
+
+.sale_share image {
+  width: 55rpx;
+  height: 51rpx;
+  /* margin-left: 35rpx; */
+}
+
+.buybook view {
+  display: inline-block;
+}
+
+/* 联系与评论 */
+
+.sale_tel {
+  height: 120rpx;
+  width: 120rpx;
+  margin: 40rpx 5rpx 0 130rpx;
+}
+
+.sale_tel image {
+  width: 55rpx;
+  height: 51rpx;
+  margin-left: 35rpx;
+}
+
+.sale_tel view {
+  display: block;
+  text-align: center;
+  color: #ea530b;
+  font-size: 25rpx;
+}
+
+/* 评论区域 */
+
+.comment-container {
+  padding: 30rpx;
+  background-color: #eee;
+}
+
+.all-comment {
+  font-size: 16px;
+  margin-bottom: 50rpx;
+}
+
+.comment-item {
+  position: relative;
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4em;
+  font-size: 75%;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 15rpx;
+  color: #145481;
+}
+
+.user-avatar {
+  flex: 2;
+}
+
+.user-avatar image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.comment-content {
+  display: flex;
+  flex: 7;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-nickName {
+  margin-bottom: 30rpx;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.comment-text {
+  margin-bottom: 30rpx;
+  font-size: 16px;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.default-text {
+  margin-top: 50rpx;
+  color: #aaa;
+}
+
+/* 购物车 */
+
+.shopcar {
+  width: 230rpx;
+  height: 75rpx;
+  background-color: #fe9901;
+  border-top-left-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 70rpx;
+  font-weight: 650;
+  font-size: 32rpx;
+  font-family: 黑体;
+  position: absolute;
+  left: 280rpx;
+  top: 30rpx;
+}
+.btn_disable{
+  background-color: gray;
+  width: 230rpx;
+  height: 75rpx;
+  border-top-left-radius: 36rpx;
+  border-bottom-left-radius: 36rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 70rpx;
+  font-weight: 650;
+  font-size: 32rpx;
+  font-family: 黑体;
+  position: absolute;
+  left: 280rpx;
+  top: 30rpx;
+}
+.gobuy {
+  width: 230rpx;
+  height: 75rpx;
+  background-color: #ff4f01;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 70rpx;
+  font-weight: 650;
+  font-size: 32rpx;
+  font-family: 黑体;
+  position: absolute;
+  left: 510rpx;
+  top: 30rpx;
+}
+.btn_disable_buy{
+  width: 230rpx;
+  height: 75rpx;
+  background-color: #636c69;
+  border-top-right-radius: 36rpx;
+  border-bottom-right-radius: 36rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 70rpx;
+  font-weight: 650;
+  font-size: 32rpx;
+  font-family: 黑体;
+  position: absolute;
+  left: 510rpx;
+  top: 30rpx;
+}
+/* 评论 */
+
+.input-section {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+}
+
+.input_input {
+  flex: 1;
+  font-size: 30rpx;
+  height: 80rpx;
+  min-height: 80rpx;
+  padding-left: 30rpx;
+  border: 1rpx solid gray;
+  border-radius: 15rpx;
+}
+
+.sendMsg {
+  display: inline-block;
+  width: 150rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border: 1rpx solid gray;
+  border-radius: 25rpx;
+}
+
+/* 设置一个展位的空间 */
+
+.autobox {
+  width: 100%;
+  height: 130rpx;
+}
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 460rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: -1;
+  color: #fff;
+}
+
+.buyOrAdd {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.book_detail_top {
+  width: 100%;
+  height: 150rpx;
+}
+
+.add_book_img {
+  height: 180rpx;
+  width: 160rpx;
+  position: absolute;
+  left: 68rpx;
+  top: -80rpx;
+  z-index: 1001;
+  border-radius: 45rpx;
+  overflow: hidden;
+  border: 1rpx solid palevioletred;
+}
+
+.add_book_img image {
+  height: 180rpx;
+  width: 160rpx;
+}
+
+.add_book_price {
+  position: absolute;
+  top: 15rpx;
+  left: 270rpx;
+  color: red;
+  font-size: 33rpx;
+}
+
+.add_book_name {
+  position: absolute;
+  top: 65rpx;
+  left: 270rpx;
+  font-size: 35rpx;
+}
+
+.close_icon {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top: -2rpx;
+  right: -2rpx;
+  text-align: center;
+  color: gray;
+  font-weight: 700;
+  font-size: 40rpx;
+}
+
+/* 加减数量 */
+
+/*主容器*/
+.stepper {
+  width: 80px;
+  height: 26px;
+  /*给主容器设一个边框*/
+  border: 1px solid #000;
+  border-radius: 3px;
+  position: absolute;
+  top: 210rpx;
+  left: 200rpx;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 19px;
+  line-height: 26px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 40px;
+  height: 26px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+.numtext{
+  font-size: 38rpx;
+  font-weight: 500;
+  margin-left: 45rpx;
+  margin-top: 30rpx;
+  display: inline-block;
+}
+.book_detail_getnum {
+  height: 110rpx;
+  width: 100%;
+}
+.addCar_btn {
+  background-color: #fe9901;
+  height: 150rpx;
+  width: 70%;
+  margin: 100rpx auto;
+  color: #fff;
+  font-size: 45rpx;
+  line-height: 150rpx;
+  text-align: center;
+  border-radius: 90rpx;
+}
+.buyBook_btn {
+  background-color: #ff4f01;
+  height: 100rpx;
+  width: 60%;
+  margin: 0 auto;
+  margin-top:18rpx; 
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 65rpx;
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+.change_area_btn {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  font-weight: 600;
+  margin-left: 33rpx;
+}
+
+.detail_dizhi {
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 36rpx;
+}
+
+.detail_dizhi input {
+  margin-left: 25rpx;
+  height: 80rpx;
+  width: 100%;
+}
+.detail_dizhi1 {
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 36rpx;
+}
+.detail_dizhi1 input {
+  margin-left: 25rpx;
+  height: 80rpx;
+  width: 45%;
+  display: inline-block;
+}
+.post_name {
+  border-right: 2rpx solid #000;
+}
+.btn_disable{
+  background-color: gray;
+}

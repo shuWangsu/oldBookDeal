@@ -1,0 +1,62 @@
+@import "/utils/wxss/stylesheet.wxss";
+page{
+  height: 100%;
+}
+.sell_container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sell_img{
+  display: flex;
+  justify-content: center;
+  /* align-items: center;   */
+  margin-top: 25rpx;
+}
+.sell_img image{
+  width: 640rpx;
+  height: 480rpx;
+}
+.sell_btn{
+  margin-top: 45rpx;
+}
+.sell_btn button{
+  width: 368rpx;
+  height: 80rpx;
+  min-height: 80rpx;
+  min-width: 368rpx;
+  font-size: 34rpx;
+}
+.other_fun{
+  margin-top: 85rpx;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.other_msg{
+  border: 1px solid #07c160;
+}
+.other_msg text{
+  font-size: 30rpx;
+  font-weight: 450;
+}
+.other_inline{
+  display: inline-block;
+  font-size: 50rpx;
+  margin: 5rpx 8rpx;
+  color: #b7981b;
+}
+.sell_btnAuto{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.sell_btnAuto button{
+  width: 368rpx;
+  height: 80rpx;
+  min-height: 80rpx;
+  min-width: 368rpx;
+  font-size: 34rpx;
+}

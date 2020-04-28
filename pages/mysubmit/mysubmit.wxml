@@ -1,0 +1,71 @@
+<view>
+  <view class="top_nav">
+    <view class="{{bottom_flag?'bottom_color':''}}" bindtap="onSale">正在出售</view>
+    <view class="{{bottom_flag1?'bottom_color':''}}" bindtap="offSale">已经售罄</view>
+    <view class="{{bottom_flag2?'bottom_color':''}} newsremind" bindtap="saleRemind">发货提醒
+      <view wx:if="{{red_flag}}"></view>
+    </view>
+    <view class="{{bottom_flag3?'bottom_color':''}} newsremind" bindtap="deliveryDetails">发货详情</view>
+  </view>
+  <view wx:if="{{bottom_flag}}">
+    <view class="content_list" wx:for="{{submitList}}" wx:key="index" wx:if="{{item.booknum !== 0}}">
+      <image src="{{item.imgurl}}"></image>
+      <view class="xiangqing">
+        <view>书籍名称:{{item.bookname}}</view>
+        <view>书籍单价:￥{{item.bookprice}}</view>
+        <view>剩余数量:{{item.booknum}}/{{item.booknumall}}</view>
+        <view>发布日期:{{item.uptime}}</view>
+      </view>
+      <view class="check_detail" bindtap="edit" data-index="{{index}}">编辑</view>
+      <view class="delete" bindtap="deleteList" data-index="{{index}}">下架</view>
+    </view>
+  </view>
+  <view wx:if="{{bottom_flag1}}">
+    <view class="content_list" wx:for="{{submitList}}" wx:key="index" wx:if="{{item.booknum === 0}}">
+      <image src="{{item.imgurl}}"></image>
+      <view class="xiangqing">
+        <view>书籍名称:{{item.bookname}}</view>
+        <view>书籍单价:￥{{item.bookprice}}</view>
+        <view>剩余数量:{{item.booknum}}/{{item.booknumall}}</view>
+        <view>发布日期:{{item.uptime}}</view>
+      </view>
+      <view class="check_detail" bindtap="edit" data-index="{{index}}">编辑</view>
+      <view class="delete" bindtap="deleteList" data-index="{{index}}">下架</view>
+    </view>
+  </view>
+  <view wx:if="{{bottom_flag2}}">
+    <view class="top_chakan">******点击列表查看购买者信息******</view>
+    <view class="content_list" wx:for="{{fahuoarr}}" wx:key="index">
+      <image src="{{fahuolist.result1[item][0].imgurl}}"></image>
+      <view class="xiangqing" bindtap="checkCustomer" data-index="{{index}}">
+        <view>书籍名称:{{fahuolist.result1[item][0].bookname}}</view>
+        <view>书籍单价:￥{{fahuolist.result1[item][0].bookprice}}</view>
+        <view>购买数量:{{fahuolist.result2[item].buyBookNum}}</view>
+        <view>请求日期:{{fahuolist.result2[item].buyTime}}</view>
+      </view>
+      <view class="check_detail" bindtap="cancelFaHuo" data-index="{{index}}">取消发货</view>
+      <view class="delete" bindtap="confirmFaHuo" data-index="{{index}}">确认发货</view>
+    </view>
+  </view>
+  <view wx:if="{{bottom_flag3}}">
+    <view class="content_list" wx:for="{{fahuoarr}}" wx:key="index">
+      <image src="{{fahuolist.result1[item][0].imgurl}}"></image>
+      <view class="xiangqing">
+        <view>书籍名称:{{fahuolist.result1[item][0].bookname}}</view>
+        <view>书籍单价:￥{{fahuolist.result1[item][0].bookprice}}</view>
+        <view>购买数量:{{fahuolist.result2[item].buyBookNum}}</view>
+        <view>请求日期:{{fahuolist.result2[item].buyTime}}</view>
+      </view>
+      <view class="check_detail" wx:if="{{fahuolist.result2[item].status == 0}}">已发货</view>
+      <view class="check_detail btn_box" wx:if="{{fahuolist.result2[item].status == 2}}">未发货</view>
+      <view class="viewBuyer" bindtap="checkCustomer" data-index="{{index}}">查看购买者信息</view>
+      <view class="cancelfahuo" wx:if="{{fahuolist.result2[item].status == 2}}">
+        <image src="../../images/cancelfahuo.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view wx:if="{{dingdanList.length === 0}}" class="goBuyRemind">
+    <view>你还没有发布书籍哦，快去发布吧！！！</view>
+  </view> -->
+</view>

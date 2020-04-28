@@ -1,0 +1,198 @@
+/* pages/myshoppingcar/myshoppingcar.wxss */
+.cart-box {
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+}
+
+.cart-goods {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx;
+  border-bottom: 3rpx solid #e6e6e6;
+}
+
+.icon-wrapper {
+  line-height: 260rpx;
+}
+
+.cart-icon {
+  display: inline-block;
+  margin: auto 10rpx;
+  margin-left: -10rpx;
+}
+
+.cart-img {
+  display: flex;
+  width: 580rpx;
+  height: 260rpx;
+}
+
+.cart-img image {
+  margin: auto 0rpx;
+  width: 165rpx;
+  height: 225rpx;
+}
+
+.cart-goods .cart-message {
+  width: 380rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20rpx;
+  justify-content: space-around;
+}
+
+.cart-message view {
+  display: inline-block;
+}
+
+.name {
+  font-weight: 600;
+  color: #4a4a4a;
+  font-size: 32rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.author, .numtext {
+  font-size: 28rpx;
+  color: #9e9e9e;
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.price {
+  font-size: 28rpx;
+  color: #f40;
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.delete {
+  position: absolute;
+  right: 40rpx;
+  margin-top: -10rpx;
+}
+
+.cart-bottom {
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  bottom: 0rpx;
+}
+
+.cart-allPrice {
+  float: left;
+  padding: 0.5rem;
+  font-weight: 100;
+  margin-left: 20rpx;
+}
+
+.allPrice {
+  float: left;
+  padding: 0.5rem;
+  font-weight: 100;
+  margin-left: -30rpx;
+  color: #f40;
+}
+
+.cart-allSelect {
+  float: left;
+  padding: 0.5rem;
+  margin-left: -23rpx;
+  font-weight: 100;
+}
+
+.cart-iconAll {
+  float: left;
+  padding: 0.5rem;
+  margin-top: 7rpx;
+}
+
+.btn-red {
+  background-color: #f44336; /* 红色 */
+  font-size: 40rpx;
+}
+
+.cart-bottom button {
+  position: fixed;
+  right: 0;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 40%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom {
+  color: #666;
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 150rpx;
+}
+
+/* 加减数量 */
+
+/*主容器*/
+
+.stepper {
+  width: 80px;
+  height: 26px;
+  /*给主容器设一个边框*/
+  border: 1px solid #000;
+  border-radius: 3px;
+  position: absolute;
+  top: 165rpx;
+  left: 380rpx;
+  z-index: 999
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 19px;
+  line-height: 26px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 40px;
+  height: 26px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}

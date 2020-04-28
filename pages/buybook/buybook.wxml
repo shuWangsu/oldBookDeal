@@ -1,0 +1,162 @@
+<view>
+  <!-- 上面是书籍图片区域 -->
+  <view class="header_content">
+    <!-- 放一张背景图片 -->
+    <image class='background' src="{{buyInfo.imgurl}}" mode="aspectFill"></image>
+    <!-- 放一个透明层 -->
+    <view class="halfopc"></view>
+    <!-- 主体内容 -->
+    <view class="book_content">
+      <!-- 左边图片区域 -->
+      <view class="book_img">
+        <image src="{{buyInfo.imgurl}}" mode="aspectFit" bindtap="handleImagePreview"></image>
+      </view>
+      <!-- 右边内容区域 -->
+      <view class="book_msg">
+        <view>{{buyInfo.bookname}}</view>
+        <view>
+          <text>￥{{buyInfo.bookprice}}</text>
+          <text class="dazhe" wx:if="{{buyInfo.discount!=='Infinity'}}">{{buyInfo.discount}}折</text>
+        </view>
+        <view>{{buyInfo.bookauthor}}</view>
+        <view wx:if="{{buyInfo.publisher!==null}}">{{buyInfo.publisher}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 售卖人信息 -->
+  <view wx:if="{{showAddCar}}">
+    <view class="connect_sale">
+      <!-- 头像 -->
+      <view class="head_photo">
+        <image src="{{saleimg[0].photo}}"></image>
+      </view>
+      <!--昵称 -->
+      <view class="nicheng">
+        <text>{{saleimg[0].wxusername}}：￥{{buyInfo.bookprice}}</text>
+        <view class="degree" wx:if="{{buyInfo.booklevel == '1'}}">三成新</view>
+        <view class="degree" wx:if="{{buyInfo.booklevel == '2'}}">五成新</view>
+        <view class="degree" wx:if="{{buyInfo.booklevel == '3'}}">七成新</view>
+        <view class="degree" wx:if="{{buyInfo.booklevel == '4'}}">九成新</view>
+      </view>
+      <!-- 剩余数量 -->
+      <view class="shengyu">剩余:{{buyInfo.booknum}}本</view>
+      <!-- 联系 -->
+      <view class="copy_tel" bindtap='copyText' data-text="{{contents}}">
+        <image src="/images/wechat.png"></image>
+        <view>联系</view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <!-- 中间是书籍图片预览 -->
+    <view>
+      <view class="mid_msg">书籍图片如下所示</view>
+      <view wx:for="{{bookimg}}" wx:key="index" class="bookimgbox">
+        <image src="{{item.imgURl}}" data-idx="{{index}}" bindtap="ImagePreview"></image>
+      </view>
+    </view>
+    <!-- 发布人的描述-->
+    <view wx:if="{{buyInfo.bookdescribe !== null}}">
+      <view class="mid_msg">简介</view>
+      <view class="jianjie">{{buyInfo.bookdescribe}}</view>
+    </view>
+    <!-- 评论区域 -->
+    <view class='comment-container'>
+      <view class='all-comment'>全部评论</view>
+      <view class='comment-item' wx:for="{{commentList}}" wx:key="commentId">
+        <view class='user-avatar'>
+          <image src='{{ headerArr[item][0].photo }}'></image>
+        </view>
+        <view class='comment-content'>
+          <view class='user-nickName'>{{headerArr[item][0].wxusername}}</view>
+          <view class='comment-text'>{{ pingLunMsg[item].pinglunmsg }}</view>
+          <view class='post-time'>{{ pingLunMsg[item].send_time }}</view>
+        </view>
+      </view>
+    </view>
+    <view class='default-text' wx:if="{{!commentList.length}}">还没有人留言</view>
+    <view class="autobox"></view>
+    <!-- 购买或加入购物车 -->
+    <view class="buybook" wx:if="{{!showInput}}">
+      <button class="sale_share" open-type="share">
+        <image src="../../images/show.png"></image>
+      </button>
+      <view bindtap="callsell" class="sale_tel">
+        <image src="../../images/pinglun.png"></image>
+        <!-- <view>评论</view> -->
+      </view>
+      <view class="{{buyInfo.booknum>0?'shopcar':'btn_disable'}}" bindtap="addcar">加入购物车</view>
+      <view class="{{buyInfo.booknum>0?'gobuy':'btn_disable_buy'}}" bindtap="buyCar">直接购买</view>
+    </view>
+    <view class="input-section" wx:if="{{showInput}}">
+      <input class='input_input' value="{{inputMessage}}" focus="auto" placeholder="请输入内容" bindinput='bindInputMsg' bindconfirm="sendMsg" />
+      <text bindtap="sendMsg" class="sendMsg">发送</text>
+    </view>
+  </view>
+  <view wx:if="{{!showAddCar}}" class="buyOrAdd">
+    <view class="book_detail_top">
+      <view class="add_book_img">
+        <image src="{{buyInfo.imgurl}}"></image>
+      </view>
+      <view class="add_book_price">￥{{buyInfo.bookprice}}/本</view>
+      <view class="add_book_name">{{buyInfo.bookname}}</view>
+      <view bindtap="close_addcar">
+        <icon class='iconfont icon-icon_guanbi close_icon'></icon>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="book_detail_getnum">
+      <view class="numtext">数量:</view>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input type="number" bindchange="bindManual" value="{{num}}" disabled />
+        <!-- 加号 -->
+        <text class="normal" bindtap="bindPlus">+</text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <!-- 选择地址，省市区级联，把选中后的地址显示出来 -->
+    <view wx:if="{{dizhi_flag}}">
+      <view class="change_area_btn" bindtap="change_area" wx:if="{{change_flag}}">
+        {{areaInfo === ''?'点击选择地址(必填)':areaInfo}}
+      </view>
+      <view wx:if="{{!change_flag}}">
+        <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+          <view style="height:10% ;width:95%;margin-top:10rpx">
+            <text catchtap="cityCancel">取消</text>
+            <text style="float: right" catchtap="citySure">确定</text>
+          </view>
+          <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+          <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="index">
+            <picker-view-column>
+              <view wx:for="{{provinces}}" class="picker-item" wx:key="index">
+                {{item.name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{citys}}" class="picker-item" wx:key="index">
+                {{item.name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{areas}}" class="picker-item" wx:key="index">
+                {{item.name}}</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+      </view>
+    </view>
+    <view class="line" wx:if="{{dizhi_flag}}"></view>
+    <view class="detail_dizhi" wx:if="{{detail_flag}}">
+      <input placeholder="请输入详细地址（必填）" bindinput="getDetail_dizhi"></input>
+    </view>
+    <view class="line" wx:if="{{detail_flag}}"></view>
+    <view class="detail_dizhi1" wx:if="{{detail_flag}}">
+      <input type="text" placeholder="输入收件人(必填)" bindinput="getDetail_name" class="post_name"></input>
+      <input type="number" placeholder="输入电话(必填)" bindinput="getDetail_tel"></input>
+    </view>
+    <view class="line" wx:if="{{detail_flag}}"></view>
+    <view class="addCar_btn" bindtap="goAddCar" wx:if="{{btn_checked}}">加入购物车</view>
+    <view class="buyBook_btn" bindtap="goBuyBook" wx:if="{{!btn_checked}}">立即购买</view>
+  </view>
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{!showAddCar}}"></view>
+</view>

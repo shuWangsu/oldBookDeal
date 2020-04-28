@@ -1,0 +1,50 @@
+<view>
+  <view class="fahuoInfo">
+    <view class="{{bottom_flag?'bottom_color':''}}" bindtap="noGoods">未发货</view>
+    <view class="{{bottom_flag1?'bottom_color':''}}" bindtap="onSent">已发货</view>
+    <view class="{{bottom_flag2?'bottom_color':''}}" bindtap="refuseSent">拒绝发货</view>
+  </view>
+  <view wx:if="{{bottom_flag}}">
+    <view class="dingdan_box" wx:for="{{dingdanList}}" wx:key="index" wx:if="{{records[item].status==1}}">
+      <image src="{{arr[item][0].imgurl}}"></image>
+      <view class="xiangqing">
+        <view>书籍名称:{{arr[item][0].bookname}}</view>
+        <view>购买数量:{{records[item].buyBookNum}}</view>
+        <view>支付价格:{{records[item].spendPrice}}</view>
+        <view>购买日期:{{records[item].buyTime}}</view>
+        <view>订单编号:{{records[item].orderNumber}}</view>
+      </view>
+      <view class="waitfahuo" bindtap="waitFaHuo">等待发货</view>
+      <view class="connect"  bindtap='copyText' data-text="{{arr[item][0].usertel}}">联系卖家</view>
+    </view>
+  </view>
+  <view wx:if="{{bottom_flag1}}">
+    <view class="dingdan_box" wx:for="{{dingdanList}}" wx:key="index" wx:if="{{records[item].status==0}}">
+      <image src="{{arr[item][0].imgurl}}"></image>
+      <view class="xiangqing">
+        <view>书籍名称:{{arr[item][0].bookname}}</view>
+        <view>购买数量:{{records[item].buyBookNum}}</view>
+        <view>支付价格:{{records[item].spendPrice}}</view>
+        <view>购买日期:{{records[item].buyTime}}</view>
+        <view>订单编号:{{records[item].orderNumber}}</view>
+      </view>
+      <view class="delete" bindtap="deleteList" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <view wx:if="{{bottom_flag2}}">
+    <view class="dingdan_box" wx:for="{{dingdanList}}" wx:key="index" wx:if="{{records[item].status==2}}">
+      <image src="{{arr[item][0].imgurl}}"></image>
+      <view class="xiangqing">
+        <view>书籍名称:{{arr[item][0].bookname}}</view>
+        <view>购买数量:{{records[item].buyBookNum}}</view>
+        <view>支付价格:{{records[item].spendPrice}}</view>
+        <view>购买日期:{{records[item].buyTime}}</view>
+        <view>订单编号:{{records[item].orderNumber}}</view>
+      </view>
+      <view class="delete" bindtap="deleteList" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <view wx:if="{{dingdanList.length === 0}}" class="goBuyRemind">
+    <view>你还没有购物记录哦，快去购买吧！！！</view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view>
+  <view class="header_fixed">
+    <!-- 搜索框 -->
+    <view class='search'>
+      <view class='searchItem'>
+        <input placeholder='输入你想找的内容' bindconfirm="gosearch" bindinput="getsearchvalue"></input>
+        <image bindtap="gosearch" src='/images/search.png' />
+      </view>
+    </view>
+    <!-- 类别 -->
+    <view class="scroll_cal">
+      <scroll-view scroll-x="true">
+        <block wx:for="{{book_class}}" wx:key="index">
+          <view bindtap='clickitem' data-index="{{index}}" class="header_list {{index===currentIndexNav?'active':''}}">
+            <view>{{item.className}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="zhanwei"></view>
+  <!-- 书籍列表 -->
+  <view class="eachItem" wx:for="{{bookInfo}}" wx:key="index" bindtap="goBuyBook" data-index="{{index}}" wx:if="{{item.booknum !== 0}}">
+    <view class="book_image">
+      <image src="{{item.imgurl}}"></image>
+    </view>
+    <view class="book_message">
+      <view class="book_title">{{item.bookname}}</view>
+      <view class="book_author">{{item.bookauthor}}</view>
+      <view class="book_price">
+        <text>￥{{item.bookprice}}</text>
+        <view class="dazhe" wx:if="{{item.discount!=='Infinity'}}">{{item.discount}}折</view>
+        <view class="dazhe" wx:if="{{item.discount==='Infinity'}}">暂无折扣</view>
+        <view class="book_num">数量:{{item.booknum}}</view>
+      </view>
+      <view class="pub_time">
+        <text>{{item.uptime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

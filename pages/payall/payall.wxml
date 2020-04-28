@@ -1,0 +1,16 @@
+<!--pages/payall/payall.wxml-->
+<view class="content">
+  <view>
+    <text>收件人:</text>
+    <input placeholder="请输入收件人（必填）" auto-focus bindinput="getReceiver"></input>
+  </view>
+  <view>
+    <text>联系电话:</text>
+    <input type="number" placeholder="请输入电话号码（必填）"  bindinput="getTelphone"></input>
+  </view>
+  <view>
+    <text>收件地址:</text>
+    <input placeholder="请输入收件地址（必填）" bindinput="getAdress"></input>
+  </view>
+  <view class="submit_btn" bindtap="submit">提交信息</view>
+</view>

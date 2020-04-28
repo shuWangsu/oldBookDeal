@@ -1,0 +1,40 @@
+<view class="center">
+  <view class="header">
+    <image class='background' src="../../images/bookbg.png" mode="aspectFit"></image>
+    <view class="headerImg">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="nickname">{{userInfo.nickName}}
+      <!-- <view class="salenum">在售 {{}}</view> -->
+    </view>
+  </view>
+  <!-- 我的发布 -->
+  <view class="mySubmit" bindtap="mySubmit">
+    <image src="../../images/submit.png" class="submit_img"></image>
+    <view>我的发布</view>
+    <image src="../../images/down.png" class="down_img"></image>
+    <view class="red_box" wx:if="{{newsflag !== 0}}"></view>
+  </view>
+  <view class="line"></view>
+  <!-- 我的购物车 -->
+  <view class="myShoppingCar" bindtap="myShoppingCar">
+    <image src="../../images/shopping2.png" class="submit_img"></image>
+    <view>我的购物车</view>
+    <image src="../../images/down.png" class="down_car"></image>
+  </view>
+  <view class="line"></view>
+  <!-- 购买记录 -->
+  <view class="mySubmit" bindtap="buyList">
+    <image src="../../images/buylist.png" class="submit_img"></image>
+    <view>购买记录</view>
+    <image src="../../images/down.png" class="down_img"></image>
+  </view>
+  <view class="line"></view>
+  <!-- 关于我们 -->
+   <view class="mySubmit" bindtap="aboutUs">
+    <image src="../../images/aboutus.png" class="submit_img"></image>
+    <view>关于我们</view>
+    <image src="../../images/down.png" class="down_img"></image>
+  </view>
+  <view class="line"></view>
+</view>

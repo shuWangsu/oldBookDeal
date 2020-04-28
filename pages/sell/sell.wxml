@@ -1,0 +1,20 @@
+<view class="sell_container">
+<!-- 图片区域 -->
+  <view class="sell_img">
+    <image src="/images/sellbookdetail.png"></image>
+  </view>
+  <!-- 按钮区域 -->
+  <view class="sell_btn">
+    <button type="primary" bindtap="btnSaoma">扫码添加</button>
+  </view>
+  <!-- 说明区域 -->
+  <view class="other_fun">
+    <view class="other_msg">
+      <view class="iconfont icon-zhuyi1 other_inline"></view>
+      <text>注意:若扫码失败,可点击下面按钮手动添加</text>
+    </view>
+    <view class="sell_btnAuto">
+      <button type="primary" bindtap="btnAuto">手动添加</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,139 @@
+.top_nav {
+  display: flex;
+  flex-direction: row;
+  height: 60rpx;
+  width: 100%;
+}
+
+.top_nav view {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 35rpx;
+}
+
+.bottom_color {
+  border-bottom: 2rpx solid #e61a0f;
+}
+
+.newsremind {
+  position: relative;
+}
+
+.newsremind view {
+  height: 30rpx;
+  width: 30rpx;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 3rpx;
+  left: 160rpx;
+}
+
+.content_list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 350rpx;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  border: 1rpx solid #000;
+}
+
+.content_list image {
+  width: 250rpx;
+  height: 300rpx;
+  align-self: center;
+  margin-left: 3rpx;
+}
+
+.xiangqing {
+  display: flex;
+  flex-direction: column;
+}
+
+.xiangqing view {
+  margin-top: 15rpx;
+  font-size: 35rpx;
+  font-family: 仿宋;
+  font-weight: 600;
+  width: 480rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.check_detail {
+  position: absolute;
+  width: 160rpx;
+  height: 60rpx;
+  background-color: #4ca511;
+  border-radius: 30rpx;
+  top: 265rpx;
+  left: 230rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.content_list .btn_box {
+  background-color: gray;
+}
+
+.delete {
+  position: absolute;
+  width: 160rpx;
+  height: 60rpx;
+  background-color: #e61a0f;
+  border-radius: 30rpx;
+  top: 265rpx;
+  left: 480rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.top_chakan {
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+
+.viewBuyer {
+  position: absolute;
+  width: 250rpx;
+  height: 60rpx;
+  background-color: #e61a0f;
+  border-radius: 30rpx;
+  top: 265rpx;
+  left: 405rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 500;
+  z-index: 1
+}
+
+.cancelfahuo {
+  position: absolute;
+  width: 100%;
+  height: 350rpx;
+  background-color: rgba(80, 80, 80, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.cancelfahuo image {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0 auto;
+}

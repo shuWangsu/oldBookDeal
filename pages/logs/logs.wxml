@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view>
+  <block wx:for="{{images}}" wx:for-index="index">
+    <image src="{{images[index].downUrl}}"></image>
+  </block>
+</view>

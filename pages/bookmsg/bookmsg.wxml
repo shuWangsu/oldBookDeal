@@ -1,0 +1,144 @@
+<view class="bookmsg_all">
+  <!-- 顶部tips -->
+  <view class="top_msg">
+    <text decode="{{true}}">Tips &ensp;</text>
+    <view class="red_cir"></view>
+    <text decode="{{true}}">&ensp;必填&ensp; </text>
+    <view class="green_cir"></view>
+    <text decode="{{true}}">&ensp;选填&ensp;&ensp;&ensp;</text>
+  </view>
+  <form bindsubmit="formSubmit">
+    <!-- 显示书名 -->
+    <view class="bookname">
+      <view class="chengse_msg">
+        <view class="red_cir"></view>
+        <block wx:if="{{bookmsg.data.pageName == 'sell'}}">
+          <text>书名:{{bookmsg.data.title}}</text>
+        </block>
+        <block wx:elif="{{bookmsg.data.pageName == 'handAuto'}}">
+          <text>书名:</text>
+          <input type="text" auto-focus placeholder="输入书名" name="book_name"></input>
+        </block>
+        <block wx:if="{{book_edit.pageName === 'mysubmit'}}">
+          <text>书名:</text>
+          <input type="text" auto-focus value="{{book_edit.bookmsg.bookname}}" placeholder="输入书名" name="book_name"></input>
+        </block>
+      </view>
+    </view>
+    <view class='line'></view>
+    <!-- 显示作者 -->
+    <view class="bookauthor">
+      <view class="chengse_msg">
+        <view class="red_cir"></view>
+        <block wx:if="{{bookmsg.data.pageName == 'sell'}}">
+          <text>作者:{{bookmsg.data.author}}</text>
+        </block>
+        <block wx:elif="{{bookmsg.data.pageName == 'handAuto'}}">
+          <text>作者:</text>
+          <input type="text" placeholder="输入作者" name="book_author"></input>
+        </block>
+        <block wx:if="{{book_edit.pageName === 'mysubmit'}}">
+          <text>作者:</text>
+          <input type="text" placeholder="输入作者" value="{{book_edit.bookmsg.bookauthor}}" name="book_author"></input>
+        </block>
+      </view>
+    </view>
+    <view class='line'></view>
+    <!-- 选择类别 -->
+    <view class="bookclass">
+      <view class="bookclass_msg">
+        <view class="red_cir spa"></view>
+        <text>书籍种类:</text>
+      </view>
+      <Select prop-array='{{selectArray}}' nowText="请选择书籍种类" bind:getData='getKind'></Select>
+    </view>
+    <view class='line'></view>
+    <!-- 输入数量 -->
+    <view class="booknum">
+      <view class="chengse_msg">
+        <view class="red_cir"></view>
+        <text>数量:</text>
+        <input type="number" placeholder="输入数量" name="book_num" bindinput="handleInput" wx:if="{{book_edit.pageName !== 'mysubmit'}}"></input>
+        <input type="number" placeholder="输入数量" value="{{book_edit.bookmsg.booknum}}" name="book_num" bindinput="handleInput" wx:if="{{book_edit.pageName === 'mysubmit'}}"></input>
+      </view>
+    </view>
+    <view class='line'></view>
+    <!-- 选择成色 -->
+    <view class="chengse">
+      <view class="chengse_msg">
+        <view class="green_cir"></view>
+        <text>成色(默认为七成新)</text>
+      </view>
+      <view class='line'></view>
+      <!-- 选择成色按钮 -->
+      <view class="button_container">
+        <block wx:for="{{buttons}}" wx:key="buttons">
+          <button size="mini" class='{{item.checked?"checked_button":"normal_button"}} btn' data-id='{{item.id}}' bindtap='radioButtonTap'>
+            {{item.name}}</button>
+        </block>
+      </view>
+      <view class="clear"></view>
+    </view>
+    <!-- 描述书籍 -->
+    <view class="describe_book">
+      <view class="chengse_msg">
+        <view class="green_cir"></view>
+        <text>描述</text>
+      </view>
+      <view class="line"></view>
+      <textarea placeholder="输入相关描述，可以让你更快的卖出书籍哦" name="book_description" maxlength="140" adjust-position="{{true}}" auto-focus="{{true}}" wx:if="{{book_edit.pageName !== 'mysubmit'}}"></textarea>
+      <textarea value="{{book_edit.bookmsg.bookdescribe}}" placeholder="输入相关描述，可以让你更快的卖出书籍哦" name="book_description" maxlength="140" adjust-position="{{true}}" auto-focus="{{true}}" wx:if="{{book_edit.pageName === 'mysubmit'}}"></textarea>
+    </view>
+    <!-- 显示价格 -->
+    <view class="show_price">
+      <view class="chengse_msg">
+        <view class="red_cir"></view>
+        <block wx:if="{{bookmsg.data.pageName == 'sell'}}">
+          <text>价格 （原价：￥{{bookmsg.data.price}}）</text>
+        </block>
+        <block wx:if="{{bookmsg.data.pageName == 'handAuto'}}">
+          <text>价格</text>
+        </block>
+        <block wx:if="{{book_edit.pageName === 'mysubmit'}}">
+          <text>价格</text>
+        </block>
+      </view>
+      <input type="digit" name="book_price" placeholder="￥ 请输入你要卖的价格" class="input_price" wx:if="{{book_edit.pageName !== 'mysubmit'}}"></input>
+      <input type="digit" name="book_price" placeholder="￥ 请输入你要卖的价格" value="{{book_edit.bookmsg.bookprice}}" class="input_price" wx:if="{{book_edit.pageName === 'mysubmit'}}"></input>
+    </view>
+    <!-- 联系方式 -->
+    <view class="telphone_msg">
+      <view class="chengse_msg">
+        <view class="red_cir"></view>
+        <text>联系方式（微信号|手机号)</text>
+      </view>
+      <input type="text" name="user_tel" placeholder=" 请输入你的联系方式" class="input_tel" wx:if="{{book_edit.pageName !== 'mysubmit'}}"></input>
+      <input type="text" name="user_tel" placeholder=" 请输入你的联系方式" value="{{book_edit.bookmsg.usertel}}" class="input_tel" wx:if="{{book_edit.pageName === 'mysubmit'}}"></input>
+    </view>
+    <!--图片信息 -->
+    <view wx:if="{{book_edit.pageName !== 'mysubmit'}}">
+      <text class='pf-type'>上传图片</text>
+      <view class="img_area">
+        <block wx:for="{{images}}" wx:key="*this">
+          <view class="q-image-wrap">
+            <!-- 图片缩略图  -->
+            <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+            <!-- 移除图片的按钮  -->
+            <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
+              <icon class='iconfont icon-icon_guanbi'></icon>
+            </view>
+          </view>
+        </block>
+        <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 3}}">
+          <icon class='iconfont icon-icon_jiahao'></icon>
+        </view>
+      </view>
+    </view>
+    <view class="line_sub"></view>
+    <!-- 点击发布 -->
+    <view class="submit_btn">
+      <button type="primary" formType="submit">发布</button>
+    </view>
+    <view class="box_zhangwei"></view>
+  </form>
+</view>

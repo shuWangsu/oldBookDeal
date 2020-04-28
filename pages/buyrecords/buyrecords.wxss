@@ -1,0 +1,89 @@
+/* pages/buyrecords/buyrecords.wxss */
+.fahuoInfo {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.fahuoInfo view {
+  display: inline-block;
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: 600;
+  width: 33.3%;
+}
+.dingdan_box{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 350rpx;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  border: 1rpx solid #000;
+}
+.dingdan_box image{
+  width: 230rpx;
+  height: 300rpx;
+  align-self: center;
+  margin-left: 3rpx;
+}
+.xiangqing{
+  display: flex;
+  flex-direction: column;
+}
+.xiangqing view{
+  height: 55rpx;
+  margin-top: 2rpx;
+  width: 510rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.delete{
+  position: absolute;
+  height: 50rpx;
+  width: 100rpx;
+  background-color: gainsboro;
+  font-size: 28rpx;
+  top: 285rpx;
+  left: 620rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+}
+
+.goBuyRemind view {
+  margin: 50rpx auto;
+  font-size: 38rpx;
+  font-family: 宋体;
+  font-weight: 600;
+  color: rgb(139, 115, 139);
+}
+.bottom_color {
+  border-bottom: 2rpx solid #e61a0f;
+}
+.waitfahuo {
+  position: absolute;
+  height: 50rpx;
+  width: 150rpx;
+  background-color: greenyellow;
+  font-size: 28rpx;
+  top: 285rpx;
+  left: 350rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+}
+.connect {
+  position: absolute;
+  height: 50rpx;
+  width: 150rpx;
+  background-color: pink;
+  font-size: 28rpx;
+  top: 285rpx;
+  left: 550rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+}
